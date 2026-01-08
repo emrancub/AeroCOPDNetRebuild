@@ -1,0 +1,61 @@
+project:
+  name: AeroCOPDNet_Rebuild
+  seed: 42
+  device: auto  # auto|cpu|cuda
+  num_workers: 4
+
+data:
+  manifest_csv: manifests/pooled_binary.csv
+  label_col: label
+  subject_col: subject_id
+  dataset_col: dataset
+  filepath_col: filepath
+  start_col: start_sec
+  end_col: end_sec
+
+features:
+  sample_rate: 4000
+  highpass_hz: 50         # set null to disable
+  n_fft: 1024
+  hop_length: 512
+  n_mels: 64
+  fmin: 50
+  fmax: 2000
+  log_mel: true
+  normalize: "per_mel"      # per_mel | global | none
+  max_len_sec: 6.0           # pad/trim waveform segment to this length
+
+augment:
+  use_specaug: true
+  specaug_freq_mask: 8
+  specaug_time_mask: 24
+  use_mixup: true
+  mixup_alpha: 0.2           # configurable to resolve manuscript inconsistencies
+  mixup_prob: 1.0
+
+train:
+  model: aerocpdnet
+  epochs: 100
+  batch_size: 32
+  lr: 1e-3
+  weight_decay: 0.0
+  amp: true
+  scheduler: "plateau"       # plateau|none
+  plateau_factor: 0.5
+  plateau_patience: 5
+  early_stopping: false
+  early_patience: 12
+  pos_weight: "auto"         # auto|float
+  threshold: 0.5             # fixed threshold for test metrics
+  tune_threshold_on_val: false
+
+cv:
+  n_splits: 5
+  val_frac: 0.2
+  stratify_by_label: true
+  shuffle: true
+
+outputs:
+  root_dir: outputs
+  experiment_name: pooled_cv_aerocpdnet
+  save_best_by: val_loss

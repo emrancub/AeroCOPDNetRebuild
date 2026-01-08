@@ -1,0 +1,5 @@
+inherit: base.yaml
+outputs:
+  experiment_name: pooled_cv_mobilenetv2
+train:
+  model: mobilenetv2

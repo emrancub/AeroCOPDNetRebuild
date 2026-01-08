@@ -1,0 +1,5 @@
+inherit: base.yaml
+outputs:
+  experiment_name: pooled_cv_aerocpdnet
+train:
+  model: aerocpdnet

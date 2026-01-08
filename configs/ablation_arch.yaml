@@ -1,0 +1,14 @@
+inherit: base.yaml
+outputs:
+  experiment_name: ablation_arch
+ablation:
+  type: arch
+  variants:
+    - name: base_cnn_gap
+      train: {model: basic_cnn}
+    - name: aerocpdnet_no_se_gap
+      train: {model: aerocpdnet, aerocpdnet: {use_se: false, pooling: gap}}
+    - name: aerocpdnet_se_gap
+      train: {model: aerocpdnet, aerocpdnet: {use_se: true, pooling: gap}}
+    - name: aerocpdnet_se_asp
+      train: {model: aerocpdnet, aerocpdnet: {use_se: true, pooling: asp}}

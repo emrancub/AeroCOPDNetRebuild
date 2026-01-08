@@ -1,0 +1,6 @@
+inherit: base.yaml
+outputs:
+  experiment_name: cross_train_icbhi_test_fraiwan
+cross_dataset:
+  train_dataset: ICBHI
+  test_dataset: FRAIWAN

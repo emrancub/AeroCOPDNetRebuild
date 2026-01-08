@@ -1,0 +1,9 @@
+inherit: base.yaml
+outputs:
+  experiment_name: pooled_cv_baselines
+train:
+  model: baselines   # run multiple baseline models
+  baselines: [basic_cnn, crnn, lstm, gru]
+augment:
+  use_specaug: true
+  use_mixup: true

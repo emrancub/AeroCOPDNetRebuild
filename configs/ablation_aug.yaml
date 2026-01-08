@@ -1,0 +1,14 @@
+inherit: base.yaml
+outputs:
+  experiment_name: ablation_augment
+ablation:
+  type: augment
+  variants:
+    - name: no_aug
+      augment: {use_specaug: false, use_mixup: false}
+    - name: specaug
+      augment: {use_specaug: true, use_mixup: false}
+    - name: mixup
+      augment: {use_specaug: false, use_mixup: true, mixup_alpha: 0.2}
+    - name: specaug_mixup
+      augment: {use_specaug: true, use_mixup: true, mixup_alpha: 0.2}
