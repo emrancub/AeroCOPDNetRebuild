@@ -1,4 +1,4 @@
-# AeroCOPDNet Rebuild (Reproducible Major-Revision Pipeline)
+# AeroCOPDNetRebuild (Reproducible Major-Revision Pipeline)
 
 This repository is a clean, from-scratch rebuild for the AeroCOPDNet COPD-from-lung-sounds project.
 It focuses on **reproducibility**, **subject-wise splitting**, and **reviewer-required experiments**.
@@ -108,4 +108,4 @@ python scripts\make_all_figures.py --outputs_dir outputs --out_dir paper_assets 
 - plots at **1000 DPI**: learning curve, ROC/PR overlays, confusion matrices grid, ablation plots
 - `predictions.csv` (sample_id, subject_id, dataset, y_true, y_prob, y_pred, fold, split)
 - leakage audit: `split_subjects.csv`, `split_files_sha1.csv` (assertions enforced)
-- params/FLOPs: `params_flops.csv`
+- params: `params_flops.csv`
