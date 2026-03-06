@@ -103,7 +103,7 @@ python scripts\make_all_figures.py --outputs_dir outputs --out_dir paper_assets 
 
 ## 📚 Citation
 
-If you use this repository, please cite the datasets and our manuscript:
+If you use this paper, please cite our manuscript:
 
 ```bibtex
 @article{hasan2026aerocopdnet,
@@ -116,35 +116,6 @@ If you use this repository, please cite the datasets and our manuscript:
   publisher={Elsevier}
 }
 ```
-
-```bibtex
-@article{Rocha2019ICBHI,
-  title   = {An open access database for the evaluation of respiratory sound classification algorithms},
-  author  = {Rocha, Bruno M. and Filos, Dorina and Mendes, L. and others},
-  journal = {Physiological Measurement},
-  year    = {2019},
-  doi     = {10.1088/1361-6579/ab03ea}
-}
-@article{Fraiwan2021Lung,
-  title   = {A dataset of lung sounds recorded from the chest wall using an electronic stethoscope},
-  author  = {Fraiwan, Mohammad and Fraiwan, Lina and Khassawneh, Bilal and Ibnian, Ayman},
-  journal = {Data in Brief},
-  year    = {2021},
-  doi     = {10.1016/j.dib.2021.106913}
-}
-```
-
----
-
-# 🔄 Updated Implementation (Post-Review)
-
-A revised and fully reproducible implementation of **AeroCOPDNet** is available in a new repository.  
-This rebuild incorporates post-review updates, clarified architecture, ablation studies, and refined evaluation protocols.
-
-👉 **AeroCOPDNetRebuild:**  
-https://github.com/emrancub/AeroCOPDNetRebuild
-
-All future updates and finalized materials will be released in the rebuilt repository upon request.
 
 ---
 
